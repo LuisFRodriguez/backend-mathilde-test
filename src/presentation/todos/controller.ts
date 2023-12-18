@@ -81,7 +81,6 @@ export class TodosController {
     const deleteAuto = await prisma.car_list.delete({
       where: {id}
     });
-
     ( deleteAuto ) 
       ? res.json (deleteAuto)
       : res.status(404).json({ error: `AUTO with id ${ id } not found` });
