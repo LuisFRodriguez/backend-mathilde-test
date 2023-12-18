@@ -82,6 +82,10 @@ export class TodosController {
       where: {id}
     });
 
+    ( deleteAuto ) 
+      ? res.json (deleteAuto)
+      : res.status(404).json({ error: `AUTO with id ${ id } not found` });
+
     res.json( {todo, deleteAuto});
 
   }
